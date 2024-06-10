@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warna2"
+        tools:context=".lihat_data">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/kembali_form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/kembali"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Data Pendaftaran"
+                android:textColor="@color/putih"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg2"
+            android:padding="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="IDENTITAS SANTRI (sesuai kk)"
+                        android:textColor="@color/hitam"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NAMA LENGKAP"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                    <EditText
+                        android:id="@+id/dpNamauser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView21" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="TEMPAT LAHIR"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpNamauser" />
+
+                    <EditText
+                        android:id="@+id/dpTempat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView22" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="TANGGAL LAHIR"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpTempat" />
+
+                    <EditText
+                        android:id="@+id/dpTanggal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="datetime"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView23" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="JENIS KELAMIN"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpTanggal" />
+
+                    <EditText
+                        android:id="@+id/dpGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView24" />
+
+                    <TextView
+                        android:id="@+id/nik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NOMOR INDUK KEPENDUDUKAN (NIK)"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpGender" />
+
+                    <EditText
+                        android:id="@+id/dpNik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nik" />
+
+                    <TextView
+                        android:id="@+id/asalmadrasah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="ASAL MADRASAH (Jika belum lulus diisi, BELUM LULUS)"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpNik" />
+
+                    <EditText
+                        android:id="@+id/dpAsalmadrasah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/asalmadrasah" />
+
+                    <TextView
+                        android:id="@+id/pendidikanformal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PENDIDIKAN FORMAL"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpAsalmadrasah" />
+
+                    <EditText
+                        android:id="@+id/dpPendidikanformal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pendidikanformal" />
+
+                    <TextView
+                        android:id="@+id/alamat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="ALAMAT (Jalan/Dusun)"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpPendidikanformal" />
+
+                    <EditText
+                        android:id="@+id/dpAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/alamat" />
+
+                    <TextView
+                        android:id="@+id/rt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="RT"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/rw"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpAlamat" />
+
+                    <EditText
+                        android:id="@+id/dpRt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/dpRw"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rt" />
+
+                    <TextView
+                        android:id="@+id/rw"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="RW"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/rt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpAlamat" />
+
+                    <EditText
+                        android:id="@+id/dpRw"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/dpRt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rt" />
+
+                    <TextView
+                        android:id="@+id/desa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="DESA/KELURAHAN"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpRt" />
+
+                    <EditText
+                        android:id="@+id/dpDesa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/desa" />
+
+                    <TextView
+                        android:id="@+id/kecamatan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="KECAMATAN"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpDesa" />
+
+                    <EditText
+                        android:id="@+id/dpKecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/kecamatan" />
+
+                    <TextView
+                        android:id="@+id/kodepos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="KODE POS"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpKecamatan" />
+
+                    <EditText
+                        android:id="@+id/dpKodepos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/kodepos" />
+
+                    <TextView
+                        android:id="@+id/kabupaten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="KABUPATEN"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpKodepos" />
+
+                    <EditText
+                        android:id="@+id/dpKabupaten"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/kabupaten" />
+
+                    <TextView
+                        android:id="@+id/provinsi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PROVINSI"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpKabupaten" />
+
+                    <EditText
+                        android:id="@+id/dpProvinsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/provinsi" />
+
+                    <TextView
+                        android:id="@+id/judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:layout_marginTop="10dp"
+                        android:text="IDENTITAS ORANGTUA/WALI (sesuai kk)"
+                        android:textColor="@color/hitam"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpProvinsi"/>
+
+                    <TextView
+                        android:id="@+id/namaayah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NAMA AYAH"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/judul" />
+
+                    <EditText
+                        android:id="@+id/dpNamaayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/namaayah" />
+
+                    <TextView
+                        android:id="@+id/nikayah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NIK AYAH"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpNamaayah" />
+
+                    <EditText
+                        android:id="@+id/dpNikayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nikayah" />
+
+                    <TextView
+                        android:id="@+id/pendidikanformalayah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PENDIDIKAN FORMAL AYAH"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpNikayah" />
+
+                    <EditText
+                        android:id="@+id/dpPendidikanformalayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pendidikanformalayah" />
+
+                    <TextView
+                        android:id="@+id/pekerjaanayah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PEKERJAAN AYAH"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpPendidikanformalayah" />
+
+                    <EditText
+                        android:id="@+id/dpPekerjaanayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pekerjaanayah" />
+
+                    <TextView
+                        android:id="@+id/namaibu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NAMA IBU"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpPekerjaanayah" />
+
+                    <EditText
+                        android:id="@+id/dpNamaibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/namaibu" />
+
+                    <TextView
+                        android:id="@+id/nikibu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NIK IBU"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpNamaibu" />
+
+                    <EditText
+                        android:id="@+id/dpNikibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nikibu" />
+
+                    <TextView
+                        android:id="@+id/pendidikanformalibu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PENDIDIKAN FORMAL IBU"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpNikibu" />
+
+                    <EditText
+                        android:id="@+id/dpPendidikanformalibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pendidikanformalibu" />
+
+                    <TextView
+                        android:id="@+id/pekerjaanibu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PEKERJAAN IBU"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpPendidikanformalibu" />
+
+                    <EditText
+                        android:id="@+id/dpPekerjaanibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pekerjaanibu" />
+
+                    <TextView
+                        android:id="@+id/nomortelepon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="NOMOR TELEPON ORANGTUA (bisa dihubungi)"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpPekerjaanibu" />
+
+                    <EditText
+                        android:id="@+id/dpNomorortu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/rectangle_30"
+                        android:fontFamily="@font/open_sans"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingStart="10dp"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nomortelepon" />
+
+                    <View
+                        android:id="@+id/garis"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@color/hitam"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpNomorortu" />
+
+                    <TextView
+                        android:id="@+id/berkas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:layout_marginTop="30dp"
+                        android:text="UPLOAD SCAN BERKAS"
+                        android:textColor="@color/hitam"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/garis"/>
+
+                    <TextView
+                        android:id="@+id/akta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="AKTA KELAHIRAN"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/berkas" />
+
+                    <ImageView
+                        android:id="@+id/dpAkta"
+                        android:layout_width="0dp"
+                        android:layout_height="350dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/brosur_pendaftaran"
+                        app:layout_constraintTop_toBottomOf="@id/akta"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/kartukeluarga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="KARTU KELUARGA"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpAkta" />
+
+                    <ImageView
+                        android:id="@+id/dpKartukeluarga"
+                        android:layout_width="0dp"
+                        android:layout_height="350dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/brosur_pendaftaran"
+                        app:layout_constraintTop_toBottomOf="@id/kartukeluarga"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/ijazahmadrasah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="IJAZAH MADRASAH"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpKartukeluarga" />
+
+                    <ImageView
+                        android:id="@+id/dpIjazahmadrasah"
+                        android:layout_width="0dp"
+                        android:layout_height="350dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/brosur_pendaftaran"
+                        app:layout_constraintTop_toBottomOf="@id/ijazahmadrasah"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/pasfoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="PAS FOTO 3X4"
+                        android:textColor="@color/hitam"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dpIjazahmadrasah" />
+
+                    <ImageView
+                        android:id="@+id/dpPasfoto"
+                        android:layout_width="0dp"
+                        android:layout_height="350dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/brosur_pendaftaran"
+                        app:layout_constraintTop_toBottomOf="@id/pasfoto"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <Button
+                        android:id="@+id/btn_lolos"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="Terima"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="50dp"
+                        android:textColor="@color/putih"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dpPasfoto" />
+
+                    <Button
+                        android:id="@+id/btn_gagal"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_ditolak"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="Tidak diterima"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/putih"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="70dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_lolos" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

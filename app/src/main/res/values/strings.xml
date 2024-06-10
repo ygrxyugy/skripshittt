@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Allam</string>
+    <string name="info_aplikasi">
+        Aplikasi Pendaftaran Pondok Pesantren Al Falah Moga merupakan aplikasi mobile yang dirancang sebagai solusi modern
+        untuk memfasilitasi proses pendaftaran santri baru di Pondok Pesantren Al Falah Moga. Aplikasi ini mempunyai fitur
+        pendaftaran online, pengisian berkas, pengunggahan dokumen, serta fittur notifikasi status pendaftaran.
+        \n
+        \nDengan adanya aplikasi ini, diharapkan dapat mempermudah proses pendaftaran santri baru, meningkatkan efisiensi, serta
+        memberikan akses yang mudah untuk mendaftar tanpa harus datang ke pondok pesantren.
+        \n
+        \nAplikasi ini dibuat secara individu untuk memenuhi tugas akhir dan melengkapi syarat guna memperoleh gelar Sarjana
+        Strata 1 (S1). Dalam proses pengembangannya, tidak menutup kemungkinan terjadi bug/kesalahan sistem ketika aplikasi
+        digunakan. Untuk itu, segala kritik dan masukan dapat dilaporkan melalu kontak berikut ini.
+
+    </string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "725865736107",
+    "firebase_url": "https://my-skripsi-5eff1-default-rtdb.firebaseio.com",
+    "project_id": "my-skripsi-5eff1",
+    "storage_bucket": "my-skripsi-5eff1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725865736107:android:8a3ff1398e3cc71ca414ee",
+        "android_client_info": {
+          "package_name": "com.example.allam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuUlGGF25pMzXgdGxUK6W_qEXr5mt8kGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
