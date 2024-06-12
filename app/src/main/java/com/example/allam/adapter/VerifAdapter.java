@@ -26,10 +26,17 @@ import java.util.Map;
 public class VerifAdapter extends RecyclerView.Adapter<VerifAdapter.ViewHolder> {
     private List<Map<String, Object>> userList;
     private Context context;
+    private int startPosition;
 
-    public VerifAdapter(List<Map<String, Object>> userList, Context context) {
+    public VerifAdapter(List<Map<String, Object>> userList, Context context, int startPosition) {
         this.userList = userList;
         this.context = context;
+        this.startPosition = startPosition;
+
+    }
+
+    public void updateStartPosition(int startPosition) {
+        this.startPosition = startPosition;
     }
 
     @Override
@@ -41,7 +48,7 @@ public class VerifAdapter extends RecyclerView.Adapter<VerifAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Map<String, Object> user = userList.get(position);
-        holder.vNo.setText(String.valueOf(position + 1));
+        holder.vNo.setText(String.valueOf(startPosition + position + 1));
         holder.vNama.setText((String) user.get("Nama Lengkap"));
 
         String status = (String) user.get("Status");

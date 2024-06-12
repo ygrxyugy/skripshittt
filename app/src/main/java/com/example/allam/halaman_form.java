@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,7 +21,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.android.volley.Request;
+import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,25 +30,20 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.RemoteMessage;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class halaman_form extends AppCompatActivity {
     private static final int REQUEST_CODE_IMAGE_1 = 1;
@@ -490,7 +486,7 @@ public class halaman_form extends AppCompatActivity {
         //orangtua
         String NamaAyah = etNamaayah.getText().toString();
         String NikAyah = etNikayah.getText().toString();
-        String PendidikanAyah = etPekerjaanayah.getText().toString();
+        String PendidikanAyah = etPendidikanayah.getText().toString();
         String PekerjaanAyah = etPekerjaanayah.getText().toString();
         String NamaIbu = etNamaibu.getText().toString();
         String NikIbu = etNikibu.getText().toString();
@@ -554,8 +550,7 @@ public class halaman_form extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        sendNotificationToServer();
-                        sendNotificationToAdmin();
+                        sendNotifToServer();
                         Toast.makeText(getApplicationContext(), "Berhasil simpan data!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), beranda_user.class));
                         progressDialog.dismiss();
@@ -570,42 +565,37 @@ public class halaman_form extends AppCompatActivity {
                 });
     }
 
-    private void sendNotificationToServer() {
-        OkHttpClient client = new OkHttpClient();
-        String url = "https://fcm.googleapis.com/fcm/send";
-        String json = "{ \"message\": \"Data baru telah ditambahkan.\" }";
+    private void sendNotifToServer() {
+        try {
+            String serviceAccountKeyPath = "app/serviceAccount.json";
+            String accessToken = GoogleAuthUtil.getAccessToken(serviceAccountKeyPath);
 
-        RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
-        okhttp3.Request request = new okhttp3.Request.Builder()
-                .url(url)
-                .post(body)
-                .build();
+            OkHttpClient client = new OkHttpClient.Builder().build();
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("Postman", "Gagal mengirim notifikasi ke server", e);
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://fcm.googleapis.com/")
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            fcmService service = retrofit.create(fcmService.class);
+
+            Notification notification = new Notification("Test Title", "Test Body");
+            notifikasiRequest request = new notifikasiRequest();
+            request.setTo("user_device_token");
+            request.setNotification(notification);
+
+            Call<notifikasiResponse> call = service.sendNotification("Bearer " + accessToken, request);
+            notifikasiResponse response = call.execute().body();
+
+            if (response != null) {
+                System.out.println("Successfully sent message: " + response.getMessage_id());
+            } else {
+                System.out.println("Failed to send message.");
             }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    Log.d("Postman", "Notifikasi berhasil dikirim ke server");
-                } else {
-                    Log.e("Postman", "Gagal mengirim notifikasi ke server");
-                }
-            }
-        });
-    }
-
-    private void sendNotificationToAdmin() {
-        // Mengirim notifikasi ke admin menggunakan FCM
-        FirebaseMessaging fMsg = FirebaseMessaging.getInstance();
-        fMsg.send(new RemoteMessage.Builder("admin-fcm-token@fcm.googleapis.com")
-                .setMessageId(Integer.toString(new Random().nextInt(9999)))
-                .addData("message", "Data baru telah ditambahkan oleh " + username)
-                .build());
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showDatePickerDialog() {

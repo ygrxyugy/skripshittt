@@ -80,7 +80,7 @@ public class data_pendaftaran extends AppCompatActivity {
             }
         });
 
-        formAdapter = new FormAdapter(namaLengkapList, userIdList);
+        formAdapter = new FormAdapter(namaLengkapList, currentPage * itemPage);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(formAdapter);
@@ -90,7 +90,6 @@ public class data_pendaftaran extends AppCompatActivity {
 
     private void loadPage() {
         isLoading = true;
-
         Query query = fStore.collection("Form")
                 .orderBy("Nama Lengkap")
                 .limit(itemPage);
@@ -105,6 +104,7 @@ public class data_pendaftaran extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     if (currentPage == 0) {
                         namaLengkapList.clear();
+                        lastDoc.clear();
                     } else if (task.getResult().size() > 0) {
                         namaLengkapList.clear();
                     }
@@ -119,6 +119,7 @@ public class data_pendaftaran extends AppCompatActivity {
                     if (task.getResult().size() > 0) {
                         lastDoc.add(task.getResult().getDocuments().get(task.getResult().size() - 1));
                     }
+                    formAdapter.updateStartPosition(currentPage * itemPage);
                     formAdapter.notifyDataSetChanged();
                     pageNumber.setText(String.valueOf(currentPage + 1));
                 } else {

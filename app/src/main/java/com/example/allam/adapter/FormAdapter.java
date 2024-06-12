@@ -17,11 +17,13 @@ import java.util.List;
 
 public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private List<String> namaLengkapList;
+    private int startPosition;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView noTextView;
         public TextView usernameTextView;
         public Button lihatButton;
+
 
         public ViewHolder(View view) {
             super(view);
@@ -31,8 +33,13 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         }
     }
 
-    public FormAdapter(List<String> namaLengkapList, List<String> userIdList) {
+    public FormAdapter(List<String> namaLengkapList, int startPosition ) {
         this.namaLengkapList = namaLengkapList;
+        this.startPosition = startPosition;
+    }
+
+    public void updateStartPosition(int startPosition) {
+        this.startPosition = startPosition;
     }
 
     @NonNull
@@ -46,7 +53,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String namaLengkap = namaLengkapList.get(position);
 
-        holder.noTextView.setText(String.valueOf(position + 1));
+        holder.noTextView.setText(String.valueOf( startPosition + position + 1));
         holder.usernameTextView.setText(namaLengkap);
         holder.lihatButton.setText("Lihat");
         holder.lihatButton.setOnClickListener(new View.OnClickListener() {

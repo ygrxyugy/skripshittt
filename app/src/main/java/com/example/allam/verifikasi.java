@@ -51,7 +51,7 @@ public class verifikasi extends AppCompatActivity {
         recyclerVerif = findViewById(R.id.recyclerVerif);
         userList = new ArrayList<>();
         currentUserList = new ArrayList<>();
-        adapter = new VerifAdapter(currentUserList, this);
+        adapter = new VerifAdapter(currentUserList, this, 0);
 
         recyclerVerif.setHasFixedSize(true);
         recyclerVerif.setLayoutManager(new LinearLayoutManager(this));
@@ -93,6 +93,7 @@ public class verifikasi extends AppCompatActivity {
         int end = Math.min(start + ITEMS_PER_PAGE, userList.size());
         currentUserList.clear();
         currentUserList.addAll(userList.subList(start, end));
+        adapter.updateStartPosition(start);
         adapter.notifyDataSetChanged();
         updateNavigation();
     }
