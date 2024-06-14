@@ -1,4 +1,4 @@
-package com.example.allam;
+package com.example.allam.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.allam.R;
 
 public class info extends AppCompatActivity {
 

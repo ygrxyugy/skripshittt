@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warna2"
-    tools:context=".beranda_admin">
+    tools:context=".ui.admin.beranda_admin">
 
     <TextView
         android:id="@+id/textView8"

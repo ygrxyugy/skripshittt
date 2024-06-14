@@ -1,4 +1,4 @@
-package com.example.allam;
+package com.example.allam.ui.admin;
 
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.allam.R;
 import com.example.allam.adapter.FormAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

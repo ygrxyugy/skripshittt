@@ -1,20 +1,17 @@
-package com.example.allam;
+package com.example.allam.ui.admin;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.allam.R;
+import com.example.allam.ui.auth.LoginActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,7 +61,7 @@ public class setting_akun_admin extends AppCompatActivity {
 
         logout_admin.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), login.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
         });
     }

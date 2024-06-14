@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".beranda_user"
+    tools:context=".ui.user.beranda_user"
     android:background="@color/warna2">
 
     <TextView

@@ -1,4 +1,4 @@
-package com.example.allam;
+package com.example.allam.ui.user;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.allam.R;
+import com.example.allam.ui.auth.LoginActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -75,7 +77,7 @@ public class setting_akun extends AppCompatActivity {
 
         logout_user.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), login.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             finish();
         });
 

@@ -1,4 +1,4 @@
-package com.example.allam;
+package com.example.allam.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.allam.R;
 
 public class halaman_media extends AppCompatActivity {
 

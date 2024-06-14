@@ -1,4 +1,4 @@
-package com.example.allam;
+package com.example.allam.ui.user;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.app.Notification;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,7 +20,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.GoogleAuthUtil;
+import com.example.allam.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,15 +34,9 @@ import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
-import okhttp3.OkHttpClient;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class halaman_form extends AppCompatActivity {
     private static final int REQUEST_CODE_IMAGE_1 = 1;
@@ -550,7 +543,6 @@ public class halaman_form extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        sendNotifToServer();
                         Toast.makeText(getApplicationContext(), "Berhasil simpan data!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), beranda_user.class));
                         progressDialog.dismiss();
@@ -563,39 +555,6 @@ public class halaman_form extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 });
-    }
-
-    private void sendNotifToServer() {
-        try {
-            String serviceAccountKeyPath = "app/serviceAccount.json";
-            String accessToken = GoogleAuthUtil.getAccessToken(serviceAccountKeyPath);
-
-            OkHttpClient client = new OkHttpClient.Builder().build();
-
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://fcm.googleapis.com/")
-                    .client(client)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-            fcmService service = retrofit.create(fcmService.class);
-
-            Notification notification = new Notification("Test Title", "Test Body");
-            notifikasiRequest request = new notifikasiRequest();
-            request.setTo("user_device_token");
-            request.setNotification(notification);
-
-            Call<notifikasiResponse> call = service.sendNotification("Bearer " + accessToken, request);
-            notifikasiResponse response = call.execute().body();
-
-            if (response != null) {
-                System.out.println("Successfully sent message: " + response.getMessage_id());
-            } else {
-                System.out.println("Failed to send message.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void showDatePickerDialog() {

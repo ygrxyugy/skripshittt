@@ -6,7 +6,7 @@
     android:background="@color/warna1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verifikasi">
+    tools:context=".ui.admin.verifikasi">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl2"

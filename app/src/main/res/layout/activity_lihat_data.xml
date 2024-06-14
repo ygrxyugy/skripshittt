@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/warna2"
-        tools:context=".lihat_data">
+        tools:context=".data.lihat_data">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl3"

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.allam.R;
-import com.example.allam.lihat_data;
+import com.example.allam.data.lihat_data;
 
 import java.util.List;
 

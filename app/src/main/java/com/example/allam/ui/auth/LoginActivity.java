@@ -1,6 +1,4 @@
-package com.example.allam;
-
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+package com.example.allam.ui.auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,29 +7,22 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.allam.R;
+import com.example.allam.ui.admin.beranda_admin;
+import com.example.allam.ui.user.beranda_user;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
-import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText eEmail, ePassword;
     private Button Daftar, Masuk;
@@ -47,7 +38,7 @@ public class login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        progressDialog = new ProgressDialog(login.this);
+        progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("Silahkan tunggu!");
         progressDialog.setCancelable(true);
@@ -124,7 +115,7 @@ public class login extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(), login.class));
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();
                 }
             });
